@@ -1,0 +1,6 @@
+(define (carmichael-test n)
+  (define (iter a)
+    (cond ((= a n) #t)
+          ((not (= (expmod a n n) a)) #f)
+          (else (iter (+ a 1)))))
+  (iter 2))
